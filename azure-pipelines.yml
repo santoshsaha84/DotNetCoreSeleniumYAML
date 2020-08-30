@@ -50,8 +50,8 @@ stages:
         - task: DotNetCoreCLI@2
           displayName: 'Selenium run'
           inputs:
-           command: custom
-           projects: '*/*.csproj'
+           command: custom           
+           projects: '**/SeleniumDemoYAML.dll'
            custom: vstest
            arguments: '--logger:trx;logfilename=TEST.xml'
     
