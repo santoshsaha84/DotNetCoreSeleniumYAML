@@ -47,6 +47,11 @@ stages:
   jobs:
   - job: 
     steps:
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: '$(system.defaultworkingdirectory)'
+            Contents: '**/SeleniumDemoYAML.dll'
+            TargetFolder: '$(build.artifactstagingdirectory)'
         - task: DotNetCoreCLI@2
           displayName: 'Selenium run'
           inputs:
@@ -61,5 +66,5 @@ stages:
            testResultsFormat: VSTest
            testResultsFiles: '**/TEST.xml'
            mergeTestResults: true
-
+       
      
