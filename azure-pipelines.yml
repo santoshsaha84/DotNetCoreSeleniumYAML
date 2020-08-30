@@ -24,7 +24,7 @@ stages:
        - task: DotNetCoreCLI@2
          displayName: 'Restore'
          inputs:
-          command: Restore      
+          command: restore      
 
 
        - task: DotNetCoreCLI@2
