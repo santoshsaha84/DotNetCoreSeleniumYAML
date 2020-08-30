@@ -51,7 +51,7 @@ stages:
           displayName: 'Selenium run'
           inputs:
            command: custom
-           projects: '**/SeleniumDemo.dll'
+           projects: '**/SeleniumDemoYAML.dll'
            custom: vstest
            arguments: '--logger:trx;logfilename=TEST.xml'
     
