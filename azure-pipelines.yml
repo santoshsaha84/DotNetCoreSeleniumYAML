@@ -46,7 +46,10 @@ stages:
          displayName: 'Publish Artifact'
          inputs:
           PathtoPublish: '$(build.artifactstagingdirectory)'
+          ArtifactName: 'drop'
+          publishLocation: Container
          condition: succeededOrFailed()
+
 
           
 
