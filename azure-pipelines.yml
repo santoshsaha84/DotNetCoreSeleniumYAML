@@ -58,6 +58,12 @@ stages:
   - job: 
     steps:
         
+        - task: DownloadBuildArtifacts@0
+          displayName: 'Download Artifcats'
+          inputs:
+           project: 'SeleniumDotNetCoreDemoYAML'
+           pipeline: 'SeleniumDotNetCoreDemoYAML-ASP.NET Core-CI'
+           artifactName: 'drop'
            
         - task: DotNetCoreCLI@2
           displayName: 'Selenium run'
