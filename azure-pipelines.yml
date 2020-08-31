@@ -42,18 +42,19 @@ stages:
           arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
           zipAfterPublish: false
           modifyOutputPath: false 
+       - task: PublishBuildArtifacts@1
+         displayName: 'Publish Artifact'
+         inputs:
+          PathtoPublish: '$(build.artifactstagingdirectory)'
+         condition: succeededOrFailed()
+
           
 
 - stage: 'Test'
   jobs:
   - job: 
     steps:
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            buildType: current
-            artifactName: 'drop'
-            pipeline: 'Azure Pipelines'
-            downloadPath: '$(System.ArtifactsDirectory)' 
+        
            
         - task: DotNetCoreCLI@2
           displayName: 'Selenium run'
