@@ -64,6 +64,7 @@ stages:
            project: 'SeleniumDotNetCoreDemoYAML'
            pipeline: 'SeleniumDotNetCoreDemoYAML-ASP.NET Core-CI'
            artifactName: 'drop'
+           downloadPath: '$(System.DefaultWorkingDirectory)'
            
         - task: DotNetCoreCLI@2
           displayName: 'Selenium run'
@@ -72,6 +73,8 @@ stages:
            projects: '**/SeleniumDemoYAML.dll'
            custom: vstest
            arguments: '--logger:trx;logfilename=TEST.xml'
+           feedsToUse: select
+
     
         - task: PublishTestResults@2
           displayName: 'Publish run results'
