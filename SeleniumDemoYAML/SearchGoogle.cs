@@ -9,27 +9,27 @@ using System.Text;
 
 namespace SeleniumDemo
 {
-    [TestClass]
-    public class SearchGoogle
-    {
+    //[TestClass]
+    //public class SearchGoogle
+    //{
 
-        [TestMethod]
-        public void SearchForCheese()
-        {
+    //    [TestMethod]
+    //    public void SearchForCheese()
+    //    {
             
-            var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("headless");
-            var  driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),chromeOptions);
+    //        var chromeOptions = new ChromeOptions();
+    //        chromeOptions.AddArgument("headless");
+    //        var  driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),chromeOptions);
 
-            driver.Navigate().GoToUrl("https://google.com");
-            System.Threading.Thread.Sleep(3000);
-            driver.FindElement(By.Name("q")).SendKeys("Hello World");
-            System.Threading.Thread.Sleep(3000);
-            driver.FindElement(By.Name("btnK")).SendKeys(Keys.Return);
+    //        driver.Navigate().GoToUrl("https://google.com");
+    //        System.Threading.Thread.Sleep(3000);
+    //        driver.FindElement(By.Name("q")).SendKeys("Hello World");
+    //        System.Threading.Thread.Sleep(3000);
+    //        driver.FindElement(By.Name("btnK")).SendKeys(Keys.Return);
 
-            driver.Close();
-            driver.Quit();
-            driver.Dispose();
-        }
-    }
+    //        driver.Close();
+    //        driver.Quit();
+    //        driver.Dispose();
+    //    }
+    //}
 }
